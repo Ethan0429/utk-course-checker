@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  auth_checker:
+    build: .
+    restart: on-failure
+    command: python3 check.py

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "utk-course-checker"
+version = "0.1.0"
+description = ""
+authors = ["Ethan Rickert <ethanrickert0429@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.2"
+beautifulsoup4 = "^4.11.1"
+selenium = "^4.8.0"
+python-dotenv = "^0.21.1"
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
