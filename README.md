@@ -27,6 +27,14 @@ poetry install
 
 Python is of course required. 3.10 is recommended, but other versions might work. I have not tested. If you are using Poetry, it assumes you have Python 3.10 or greater installed.
 
+### Chromedriver
+
+The project uses selenium to automate the browser. You will need to download the correct version of chromedriver for your system and place it in the root directory. You can download it [here](https://chromedriver.chromium.org/downloads).
+
+You will also need to amend the code in `check.py` to point to the correct location of the chromedriver executable, or have it in your `$PATH` and not change the code at all
+
+This is why I recommend using docker, since it handles all of this for you.
+
 # 🚀 Usage
 
 When you run the program, it will subscribe to the courses in the watchlist and send you an email when a seat is available. Otherwise, it will just keep running and checking every minute. This can be tweaked in the source code if you want a longer/shorter interval.
@@ -41,7 +49,7 @@ docker-compose up -d
 
 ### 🔑 Environment Variables
 
-Environment variables can be defined in the `docker-compose.yml` file, in an `.env` file, or in your computer's environment itself. 
+Environment variables can be defined in the `docker-compose.yml` file, in an `.env` file, or in your computer's environment itself.
 
 | Variable | Description | Default |
 | --- | --- | --- |
