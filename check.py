@@ -85,6 +85,10 @@ def listen(cookies, watchlist):
         for cookie in cookies:
             session.cookies.set(cookie['name'], cookie['value'])
 
+        if session.get('https://cas.tennessee.edu/cas/login?TARGET=https%3a%2f%2fmyutk.utk.edu%2fCASLogin.aspx').status_code != 302:
+            print('Session expired, logging in again...')
+            return watchlist
+
         session.post(
             'https://bannerreg.utk.edu/StudentRegistrationSsb/ssb/classSearch/resetDataForm')
 
@@ -121,7 +125,7 @@ def listen(cookies, watchlist):
                 server.quit()
                 watchlist.remove(course)
 
-        time.sleep(60)
+        time.sleep(300)
 
 
 if __name__ == '__main__':
