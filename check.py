@@ -40,6 +40,7 @@ def login():
     driver.find_element(By.ID, 'password').send_keys(os.getenv('PASSWORD'))
     driver.find_element(By.NAME, 'submit').send_keys(Keys.RETURN)
 
+    print('Push sent...')
     # wait for registerLink id to appear
     WebDriverWait(driver, TIMEOUT_TIME*6).until(
         EC.presence_of_element_located((By.ID, 'registerLink'))
